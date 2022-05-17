@@ -11,4 +11,6 @@ export const PATHS = {
   WALLET_PUBKEY: '/:walletPubkey',
   COLLECTION_NAME: '/:collectionName',
   EARN: '/earn',
+  FRAKT: 'https://frakt.xyz/',
+  TRADE: 'https://dex.fraktion.art/',
 };

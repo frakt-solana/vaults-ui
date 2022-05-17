@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import styles from './styles.module.scss';
@@ -27,9 +26,9 @@ const Header: FC<HeaderProps> = ({ className, customHeader }) => {
     <header className={classNames(styles.root, styles.header, className)}>
       {visible && <WalletContent />}
       <Container component="nav" className={styles.container}>
-        <NavLink className={styles.logo} to={PATHS.ROOT}>
+        <a href={PATHS.FRAKT} className={styles.logo}>
           Frakt
-        </NavLink>
+        </a>
         <AppNavigation>
           <DropdownMenuMore />
         </AppNavigation>

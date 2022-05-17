@@ -20,6 +20,10 @@ export const NAVIGATION_LINKS = [
     to: PATHS.EARN,
     label: 'Earn',
   },
+  {
+    to: PATHS.COLLECTIONS,
+    label: 'Collection',
+  },
 ];
 
 export const DROPDOWN_EXTERNAL_LINKS = [

@@ -1,5 +1,4 @@
 import { FC, ReactElement } from 'react';
-import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { DROPDOWN_EXTERNAL_LINKS, NAVIGATION_LINKS } from './constants';
@@ -18,11 +17,6 @@ export const DropdownMenuMore: FC = () => {
   return (
     <Dropdown title="More">
       <ul>
-        <li>
-          <NavLink className={styles.dropdownLink} to={PATHS.COLLECTIONS}>
-            Collections
-          </NavLink>
-        </li>
         {DROPDOWN_EXTERNAL_LINKS.map(({ label, href, icon: Icon }, idx) => (
           <li key={idx}>
             <a
@@ -43,7 +37,6 @@ export const DropdownMenuMore: FC = () => {
 
 export const AppNavigation: FC<AppNavigationProps> = ({
   className,
-  withoutLinks,
   children,
 }) => {
   return (
@@ -54,12 +47,21 @@ export const AppNavigation: FC<AppNavigationProps> = ({
         className,
       )}
     >
-      {!withoutLinks &&
-        NAVIGATION_LINKS.map(({ label, to }, idx) => (
-          <li key={idx} className={styles.navigationItem}>
-            <NavigationLink to={to}>{label}</NavigationLink>
-          </li>
-        ))}
+      {NAVIGATION_LINKS.map(({ label, to }, idx) => (
+        <li key={idx} className={styles.navigationItem}>
+          <NavigationLink to={to}>{label}</NavigationLink>
+        </li>
+      ))}
+      <li className={styles.navigationItem}>
+        <a
+          className={styles.dropdownLink}
+          href={PATHS.TRADE}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Trade
+        </a>
+      </li>
       {children}
     </ul>
   );

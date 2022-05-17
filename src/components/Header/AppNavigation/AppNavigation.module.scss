@@ -77,6 +77,10 @@
   cursor: pointer;
   padding: 0 16px;
 
+  &:hover {
+    color: var(--white-color);
+  }
+
   svg {
     margin-right: 10px;
   }
