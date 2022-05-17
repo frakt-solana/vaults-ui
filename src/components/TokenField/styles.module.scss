@@ -1,0 +1,207 @@
+@mixin resetBtnStyle {
+  &,
+  &:focus {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.root {
+  border: 1px solid var(--gray-color-3);
+  display: flex;
+  justify-content: flex-end;
+
+  //? Remove arrows from number input
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  transition: border-color var(--transition-1);
+}
+
+.focused {
+  .root {
+    border-color: var(--accent-color-1);
+
+    .useMaxBtn {
+      border: 1px solid var(--accent-color-1);
+
+      &:hover {
+        background: var(--accent-color-1);
+      }
+    }
+  }
+
+  .label {
+    color: var(--white-color);
+  }
+}
+
+.error {
+  .root {
+    border-color: var(--red-color);
+  }
+}
+
+.valueInput {
+  flex-grow: 1;
+  padding-left: 24px;
+  font: var(--font-btn-mid);
+  min-width: 48px;
+
+  &_disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  flex-grow: 2;
+  flex-shrink: 1;
+  max-width: 60%;
+
+  @media screen and (max-width: 380px) {
+    max-width: 55%;
+  }
+}
+
+body input.valueInput {
+  &,
+  &:hover,
+  &:active,
+  &:focus,
+  &:not(.styles_ant-input):hover {
+    background: none;
+    border: none;
+    outline: none;
+  }
+}
+
+.useMaxBtnContainer {
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 440px) {
+    padding-left: 0;
+    padding-right: 5px;
+  }
+}
+
+.useMaxBtn {
+  @include resetBtnStyle;
+
+  & {
+    border: 1px solid var(--gray-color-2);
+  }
+
+  font: var(--font-btn-small);
+  text-transform: uppercase;
+  transition: background var(--transition-1), border-color var(--transition-1);
+  min-width: 116px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0 2px;
+
+  &:hover {
+    background: var(--gray-color-2);
+  }
+
+  @media screen and (max-width: 440px) {
+    min-width: 90px;
+  }
+}
+
+.tokenLogo {
+  width: 24px;
+  height: 24px;
+  display: block;
+  border-radius: 50%;
+}
+
+.noTokenImg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  border-radius: 50%;
+  background: var(--gray-color-3);
+}
+
+.tokenName {
+  white-space: nowrap;
+
+  &_empty {
+    color: var(--gray-color-3);
+  }
+}
+
+.selectTokenBtn {
+  @include resetBtnStyle;
+  height: 100%;
+  padding: 0 24px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    background: var(--gray-color-3);
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    content: '';
+    width: 1px;
+    height: 55%;
+  }
+
+  @media screen and (max-width: 440px) {
+    padding-left: 2px;
+    padding-right: 10px;
+  }
+}
+
+.arrowDownIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--white-color);
+}
+
+.label {
+  margin-bottom: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--gray-color-3);
+  transition: var(--transition-1);
+}
+
+.disabledTokens {
+  &,
+  &:focus {
+    cursor: unset;
+  }
+}
+
+.disabledTokens .arrowDownIcon {
+  display: none;
+}
+
+:global .ant-form-item-has-error {
+  :local {
+    .root {
+      border-color: var(--red-color);
+    }
+  }
+}

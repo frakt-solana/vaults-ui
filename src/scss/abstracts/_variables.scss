@@ -1,0 +1,107 @@
+:root {
+  --black-color: #000000;
+  --color-dark: #111111;
+  --white-color: #ffffff;
+  --accent-color-1: #5d5fef;
+  --accent-color-2: #7b61ff;
+  --accent-color-3: #7879f1;
+  --accent-shadow-color: rgba(93, 95, 239, 0.3);
+  --yellow-color: #b5d307;
+  --yellow-color-hover: #bfd34c;
+  --green-color: #83d6a4;
+  --darken-green-color: #4b9b6b;
+  --red-color: #f83e3e;
+  --red-error-color: #ff6666;
+  --pink-color: #ff837b;
+  --bg-btn-color-1: rgba(62, 158, 248, 0.3);
+  --blue-color-1: #3e9ef8;
+
+  --gray-color-1: #373737;
+  --gray-color-2: rgba(255, 255, 255, 0.15);
+  --gray-color-3: rgba(255, 255, 255, 0.3);
+  --gray-color-4: rgba(255, 255, 255, 0.75);
+  --gray-color-5: #1a1a1a;
+  --gray-color-6: #46474b;
+  --gray-color-7: rgba(255, 255, 255, 0.1);
+  --gray-color-8: rgba(255, 255, 255, 0.5);
+  --gray-color-9: #373737;
+
+  --color-gray-1: #c4c4c4;
+  --color-gray-075: #b4b4b4;
+  --color-gray-3: #929292;
+  --color-gray-4: #4d4d4d;
+  --color-gray-5: #404040;
+  --color-gray-6: #1e1e1e;
+  --color-gray-7: #191919;
+  --color-gray-01: rgba(30, 30, 30, 0.1);
+  --color-gray-03: rgba(255, 255, 255, 0.3);
+  --color-gray-05: rgba(255, 255, 255, 0.5);
+  --color-gray-075: rgba(255, 255, 255, 0.75);
+  --color-gray-04: rgba(30, 30, 30, 0.4);
+  --color-dark-06: rgba(0, 0, 0, 0.6);
+
+  --border-gray-1: 1px solid #4d4d4d;
+  --border-white-1: 1px solid #ffffff;
+
+  --transition-1: 0.2s ease-in;
+
+  --font-family-oxanium: 'Oxanium', 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  --font-family-inter: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --font-smallest: 700 10px var(--font-family-oxanium);
+  --font-secondary: 700 14px var(--font-family-oxanium);
+
+  --font-btn-smallest: 400 10px var(--font-family-oxanium);
+  --font-btn-small: 400 18px var(--font-family-oxanium);
+  --font-btn-mid: 400 24px var(--font-family-oxanium);
+  --font-btn-large: 400 32px var(--font-family-oxanium);
+
+  --font-subtitle: 400 32px var(--font-family-oxanium);
+  --font-subtitle-2: 400 24px var(--font-family-oxanium);
+
+  --font-h1: 600 96px var(--font-family-oxanium);
+  --font-h2: 600 64px var(--font-family-oxanium);
+  --font-h3: 600 56px var(--font-family-oxanium);
+  --font-h4: 600 40px var(--font-family-oxanium);
+
+  --font-body-small: 400 18px var(--font-family-inter);
+  --font-body-large: 400 24px var(--font-family-inter);
+
+  --font-link: 700 18px var(--font-family-inter);
+
+  --font-title-1: 900 120px var(--font-family-inter);
+  --font-title-2: 600 48px var(--font-family-oxanium);
+  --font-text-1: 400 32px var(--font-family-oxanium);
+  --font-text-2: 400 24px var(--font-family-oxanium);
+  --font-text-3: 400 18px var(--font-family-oxanium);
+  --font-text-4: 400 24px var(--font-family-inter);
+  --font-text-5: 700 14px var(--font-family-oxanium);
+  --font-text-6: 700 12px var(--font-family-oxanium);
+  --font-text-7: 700 10px var(--font-family-oxanium);
+
+  @media screen and (max-width: 1023px) {
+    --font-title-1: 900 90px var(--font-family-inter);
+  }
+
+  @media screen and (max-width: 900px) {
+    --font-title-1: 900 70px var(--font-family-inter);
+    --font-title-2: 600 40px var(--font-family-oxanium);
+    --font-text-1: 400 28px var(--font-family-oxanium);
+    --font-text-2: 400 20px var(--font-family-oxanium);
+  }
+
+  @media screen and (max-width: 767px) {
+    --font-title-1: 900 32px var(--font-family-inter);
+    --font-title-2: 600 32px var(--font-family-oxanium);
+    --font-text-1: 400 24px var(--font-family-oxanium);
+    --font-text-2: 400 18px var(--font-family-oxanium);
+  }
+
+  @media screen and (max-width: 500px) {
+    --font-text-1: 400 18px var(--font-family-oxanium);
+    --font-text-2: 400 15px var(--font-family-oxanium);
+  }
+
+  --header-height: 50px;
+}
