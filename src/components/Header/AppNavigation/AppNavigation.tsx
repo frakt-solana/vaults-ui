@@ -47,9 +47,11 @@ export const AppNavigation: FC<AppNavigationProps> = ({
         className,
       )}
     >
-      {NAVIGATION_LINKS.map(({ label, to }, idx) => (
+      {NAVIGATION_LINKS.map(({ label, to, exact }, idx) => (
         <li key={idx} className={styles.navigationItem}>
-          <NavigationLink to={to}>{label}</NavigationLink>
+          <NavigationLink exact={exact} to={to}>
+            {label}
+          </NavigationLink>
         </li>
       ))}
       <li className={styles.navigationItem}>

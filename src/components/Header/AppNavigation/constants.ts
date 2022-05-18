@@ -11,6 +11,7 @@ export const NAVIGATION_LINKS = [
   {
     to: PATHS.ROOT,
     label: 'Vaults',
+    exact: true,
   },
   {
     to: PATHS.SWAP,
