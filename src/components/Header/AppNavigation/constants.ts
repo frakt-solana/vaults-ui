@@ -22,7 +22,7 @@ export const NAVIGATION_LINKS = [
   },
   {
     to: PATHS.COLLECTIONS,
-    label: 'Collection',
+    label: 'Collections',
   },
 ];
 
