@@ -35,20 +35,23 @@ import { StringPublicKey, MetadataByMint } from './arweave.model';
 
 export const getArweaveMetadataByMint = async (
   tokenMints: string[],
+  connection: Connection,
 ): Promise<MetadataByMint> => {
-  const rawMeta = await getMeta(tokenMints, ENDPOINT);
+  const rawMeta = await getMeta(tokenMints, connection);
 
   const metadataByMint =
-    rawMeta?.reduce((acc, { mint, metadata, tokenData }) => {
-      acc[mint] = {
-        ...metadata,
-        properties: {
-          ...metadata?.properties,
-          creators: tokenData?.creators,
-        },
-      };
-      return acc;
-    }, {}) || {};
+    rawMeta
+      ?.filter(({ failed }) => !failed)
+      ?.reduce((acc, { mint, metadata, tokenData }) => {
+        acc[mint] = {
+          ...metadata,
+          properties: {
+            ...metadata?.properties,
+            creators: tokenData?.creators,
+          },
+        };
+        return acc;
+      }, {}) || {};
 
   return metadataByMint as MetadataByMint;
 };
