@@ -35,9 +35,8 @@ import { StringPublicKey, MetadataByMint } from './arweave.model';
 
 export const getArweaveMetadataByMint = async (
   tokenMints: string[],
-  connection: Connection,
 ): Promise<MetadataByMint> => {
-  const rawMeta = await getMeta(tokenMints, connection);
+  const rawMeta = await getMeta(tokenMints, ENDPOINT);
 
   const metadataByMint =
     rawMeta
