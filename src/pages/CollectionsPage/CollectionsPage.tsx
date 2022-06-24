@@ -93,14 +93,14 @@ const CollectionsPage: FC = () => {
 
   const { itemsToShow, next } = useFakeInfinityScroll(9);
   const searchItems = useDebounce((search: string) => {
-    setSearchString(search.toUpperCase());
+    setSearchString(search?.toUpperCase());
   }, 300);
 
   const filteredCollection = useMemo(() => {
     const [sortField, sortOrder] = sort.value.split('_');
 
     return collectionsData
-      .filter(({ symbol }) => symbol.toUpperCase().includes(searchString))
+      .filter(({ symbol }) => symbol?.toUpperCase().includes(searchString))
       .sort(({ symbol: collectionNameA }, { symbol: collectionNameB }) => {
         if (sortField === 'collectionName') {
           if (sortOrder === 'desc') {

@@ -71,7 +71,7 @@ const CollectionPage: FC = () => {
   const currentCollection = collections.get(collectionName);
 
   const searchItems = useDebounce((search: string) => {
-    setSearchString(search.toUpperCase());
+    setSearchString(search?.toUpperCase());
   }, 300);
 
   const userVaults = useMemo(() => {
@@ -82,7 +82,7 @@ const CollectionPage: FC = () => {
       return filteredVaults
         .filter(({ state, hasMarket, safetyBoxes, isVerified }) => {
           const nftsName =
-            safetyBoxes?.map((nft) => nft.nftName.toUpperCase()) || [];
+            safetyBoxes?.map((nft) => nft.nftName?.toUpperCase()) || [];
           if (state === VaultState.Inactive) return false;
 
           const showAllVaults =

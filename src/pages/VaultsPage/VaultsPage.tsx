@@ -75,7 +75,7 @@ const VaultsPage = (): JSX.Element => {
   const { featuredVaultsPublicKeys } = useFeaturedVaultsPublicKeys();
 
   const searchItems = useDebounce((search: string) => {
-    setSearchString(search.toUpperCase());
+    setSearchString(search?.toUpperCase());
   }, 300);
 
   const vaults = useMemo(() => {
@@ -86,7 +86,7 @@ const VaultsPage = (): JSX.Element => {
         if (state === VaultState.Inactive) return false;
 
         const nftsNames =
-          safetyBoxes?.map((nft) => nft.nftName.toUpperCase()) || [];
+          safetyBoxes?.map((nft) => nft.nftName?.toUpperCase()) || [];
 
         const showAllVaults =
           showVaultsStatus === StatusRadioNames.SHOW_ALL_VAULTS;

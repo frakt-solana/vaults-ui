@@ -66,7 +66,7 @@ const FraktionalizePage = (): JSX.Element => {
 
   const searchItems = useDebounce((search: string) => {
     setItemsToShow(15);
-    setSearchString(search.toUpperCase());
+    setSearchString(search?.toUpperCase());
   }, 300);
 
   const onDeselect = (nft: UserNFT) => {
@@ -108,7 +108,7 @@ const FraktionalizePage = (): JSX.Element => {
 
   const nfts = useMemo(() => {
     return (rawNfts || []).filter(({ metadata }) =>
-      metadata?.name.toUpperCase().includes(searchString),
+      metadata?.name?.toUpperCase().includes(searchString),
     );
   }, [searchString, rawNfts]);
 

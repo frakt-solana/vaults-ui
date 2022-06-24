@@ -72,7 +72,7 @@ export const usePoolsPage = (): {
   }, [poolDataByMint]);
 
   const searchItems = useDebounce((search: string) => {
-    setSearchString(search.toUpperCase());
+    setSearchString(search?.toUpperCase());
   }, 300);
 
   const {
@@ -144,7 +144,7 @@ export const usePoolsPage = (): {
 
         if (removeBecauseUserDoesntStake) return false;
 
-        return tokenInfo.symbol.toUpperCase().includes(searchString);
+        return tokenInfo.symbol?.toUpperCase().includes(searchString);
       })
       .sort(({ poolConfig: poolConfigA }, { poolConfig: poolConfigB }) => {
         if (sortField === 'liquidity') {

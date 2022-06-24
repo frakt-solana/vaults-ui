@@ -25,10 +25,10 @@ export const SelectTokenModal = ({
   ...props
 }: SelectTokenModalProps): JSX.Element => {
   const [search, setSearch] = useState<string>('');
-  const searchUp = search.toUpperCase();
+  const searchUp = search?.toUpperCase();
   const filterTokens = () => {
     return tokensList.filter(({ symbol }) =>
-      symbol.toUpperCase().includes(searchUp),
+      symbol?.toUpperCase().includes(searchUp),
     );
   };
 
